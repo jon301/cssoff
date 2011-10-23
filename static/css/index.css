@@ -112,6 +112,15 @@ section h1 {
   color: white;
   font: normal 40px "KomikaTitle-Paint";
   letter-spacing: 2px;
+  position: relative;
+}
+section h1:after {
+  background-image: url('../images/bg_checks.png?1319399786');
+  height: 40px;
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 0;
 }
 
 .separator, #obstacles:before, #obstacles:after, #prizes:before, #prizes:after, #enter:before {
@@ -190,10 +199,6 @@ header h2 {
   line-height: 80px;
 }
 
-.ie header h2 {
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=white, direction=120, strength=5);
-}
-
 .lt-ie7 header {
   background: none;
 }
@@ -205,6 +210,9 @@ header h2 {
 #obstacles:after {
   height: 8px;
   bottom: 0;
+}
+#obstacles h1:after {
+  width: 660px;
 }
 
 .lt-ie9 #obstacles:before {
@@ -228,6 +236,9 @@ header h2 {
   height: 9px;
   bottom: 0;
 }
+#prizes h1:after {
+  width: 760px;
+}
 
 .lt-ie9 #prizes:before {
   background: url('../images/bg_separator1.png?1319368282') repeat;
@@ -247,6 +258,10 @@ header h2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=8);
   opacity: 0.08;
   height: 6px;
+}
+#enter h1:after {
+  background-position: 20px center;
+  width: 520px;
 }
 
 .lt-ie9 #enter:before {

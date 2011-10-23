@@ -46,6 +46,15 @@ section {
     color: white;
     font: normal 40px "KomikaTitle-Paint";
     letter-spacing: 2px;
+    position: relative;
+    &:after {
+      @include background-image(image-url("bg_checks.png"));
+      height: 40px;
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 0;
+    }
   }
 }
 
@@ -119,13 +128,13 @@ header {
   }
 }
 
-.ie header {
-  h2 {
+//.ie header {
+  //h2 {
     // IE : No text shadow, use filters
     // --> Ugly result : Use JS ?
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=white, direction=120, strength=5);
-  }
-}
+    //filter:progid:DXImageTransform.Microsoft.Shadow(color=white, direction=120, strength=5);
+  //}
+//}
 
 .lt-ie7 header {
   // Background - IE 6 : No transparent PNG, use plain color
@@ -146,6 +155,11 @@ header {
     @extend .separator;
     height: 8px;
     bottom: 0;
+  }
+  h1 {
+    &:after {
+      width: 660px;
+    }
   }
 }
 
@@ -184,6 +198,11 @@ header {
     height: 9px;
     bottom: 0;
   }
+  h1 {
+    &:after {
+      width: 760px;
+    }
+  }
 }
 
 .lt-ie9 {
@@ -214,6 +233,12 @@ header {
     @extend .separator;
     @include opacity(0.08);
     height: 6px;
+  }
+  h1 {
+    &:after {
+      background-position: 20px center;
+      width: 520px;
+    }
   }
 }
 
