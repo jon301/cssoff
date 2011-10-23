@@ -1,0 +1,15 @@
+.texture {
+  &.blue {
+    @include background(image-url('textures/blue.png') repeat);
+  }
+  &.green {
+    @include background(image-url('textures/green.png') repeat);
+  }
+  &.yellow {
+    @include background(image-url('textures/yellow.png') repeat);
+  }
+  &.orange {
+    @include background(image-url('textures/orange.png') repeat);
+  }
+}
+

@@ -1,0 +1,235 @@
+@import "partials/core";
+@import "partials/variables";
+@import "partials/defaults";
+@import "partials/mixins";
+
+// ------------------------------------------------------------
+// GENERAL
+// ------------------------------------------------------------
+
+// ---------------
+// BODY
+// ---------------
+body {
+  @extend .texture.blue;
+  background-color: #80c1d6;
+}
+
+.lt-ie7 {
+  body {
+    // Background - IE 6 : No transparent PNG, use plain color
+    background: #80c1d6;
+  }
+}
+
+// GRID
+//body.showgrid .container {
+  //@include showgrid;
+//}
+
+// ---------------
+// CONTAINER
+// ---------------
+.container {
+  width: $blueprint-container-size;
+  margin: 0 auto;
+}
+
+// ---------------
+// SECTIONS
+// ---------------
+section {
+  position: relative; // Pseudo elements separators are absolutely positioned
+  h1 {
+    // TODO: IE 6,7,8 : No rgba, use plain color
+    @include text-shadow(rgba(black, 0.2), 3px, 3px);
+    color: white;
+    font: normal 40px "KomikaTitle-Paint";
+    letter-spacing: 2px;
+  }
+}
+
+// ---------------
+// SEPARATORS
+// ---------------
+.separator {
+  @include opacity(0.06);
+  height: 7px;
+  background: black;
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+}
+
+// ------------------------------------------------------------
+// NAV
+// ------------------------------------------------------------
+nav {
+  background: rgba(#0f2830, 0.05);
+  font: normal 18px "OpenSans-Semibold";
+  text-align: center;
+  text-transform: uppercase;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  ul {
+    @include inline-block-list-container;
+    height: $nav-height;
+    li {
+      @include inline-block-list-item(26px);
+      line-height: $nav-height;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.lt-ie9 nav {
+  // Background - IE 7,8 : No RGBA, use transparent background image
+  @include background(image-url("bg_nav.png") repeat);
+}
+
+.lt-ie7 nav {
+  // Background - IE 6 : No transparent PNG, use plain color
+  background: #7ab9ce;
+}
+
+// ------------------------------------------------------------
+// HEADER
+// ------------------------------------------------------------
+header {
+  @include background(image-url("bg_header.png") center -200px no-repeat);
+  color: white;
+  font: normal 22px "OpenSans-Semibold";
+  height: 713px;
+  text-align: center;
+  h1 {
+    // TODO: Logo
+    display: none;
+  }
+  h2 {
+    @include text-shadow(white, 2px, 2px);
+    font: normal 52px "KomikaTitle-Paint";
+    color: #fe6537;
+    letter-spacing: 1px;
+    line-height: 80px;
+  }
+}
+
+.ie header {
+  h2 {
+    // IE : No text shadow, use filters
+    // --> Ugly result : Use JS ?
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=white, direction=120, strength=5);
+  }
+}
+
+.lt-ie7 header {
+  // Background - IE 6 : No transparent PNG, use plain color
+  background: none;
+}
+
+// ------------------------------------------------------------
+// OBSTACLES
+// ------------------------------------------------------------
+#obstacles {
+  @extend .texture.orange;
+  background-color: #fe6638;
+  height: 939px;
+  &:before {
+    @extend .separator;
+  }
+  &:after {
+    @extend .separator;
+    height: 8px;
+    bottom: 0;
+  }
+}
+
+.lt-ie9 {
+  #obstacles {
+    // Separators - IE 8 : Opacity not supported, use transparent PNG
+    &:before {
+      @include background(image-url("bg_separator1.png") left top repeat);
+    }
+    &:after {
+      @include background(image-url("bg_separator1.png") left top repeat);
+    }
+  }
+}
+
+.lt-ie7 {
+  #obstacles {
+    // Background - IE 6 : No transparent PNG, use plain color
+    background: #fe6638;
+  }
+}
+
+// ------------------------------------------------------------
+// PRIZES
+// ------------------------------------------------------------
+#prizes {
+  @extend .texture.green;
+  background-color: #80b238;
+  height: 1045px;
+  &:before {
+    @extend .separator;
+  }
+  &:after {
+    @extend .separator;
+    @include opacity(0.08);
+    height: 9px;
+    bottom: 0;
+  }
+}
+
+.lt-ie9 {
+  #prizes {
+    // Separators - IE 8 : Opacity not supported, use transparent PNG
+    &:before {
+      @include background(image-url("bg_separator1.png") repeat);
+    }
+    &:after {
+      @include background(image-url("bg_separator2.png") repeat);
+    }
+  }
+}
+
+.lt-ie7 {
+  #prizes {
+    // Background - IE 6 : No transparent PNG, use plain color
+    background: #80b238;
+  }
+}
+
+// ------------------------------------------------------------
+// ENTER
+// ------------------------------------------------------------
+#enter {
+  height: 844px;
+  &:before {
+    @extend .separator;
+    @include opacity(0.08);
+    height: 6px;
+  }
+}
+
+.lt-ie9 {
+  #enter {
+    // Separators - IE 8 : Opacity not supported, use transparent PNG
+    &:before {
+      @include background(image-url("bg_separator2.png") repeat);
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// FOOTER
+// ------------------------------------------------------------
+footer {
+  height: 413px;
+}
+
