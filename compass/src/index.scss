@@ -23,9 +23,9 @@ body {
 }
 
 // GRID
-//body.showgrid .container {
-  //@include showgrid;
-//}
+body.showgrid .container {
+  @include showgrid;
+}
 
 // ---------------
 // CONTAINER
@@ -42,17 +42,16 @@ section {
   position: relative; // Pseudo elements separators are absolutely positioned
   h1 {
     // TODO: IE 6,7,8 : No rgba, use plain color
-    @include text-shadow(rgba(black, 0.2), 3px, 3px);
+    @include text-shadow(rgba(black, 0.2) 3px 3px 0);
     color: white;
     font: normal 40px "KomikaTitle-Paint";
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
     position: relative;
     &:after {
       @include background-image(image-url("bg_checks.png"));
       height: 40px;
       content: "";
       position: absolute;
-      top: 15px;
       right: 0;
     }
   }
@@ -113,18 +112,24 @@ header {
   @include background(image-url("bg_header.png") center -200px no-repeat);
   color: white;
   font: normal 22px "OpenSans-Semibold";
-  height: 713px;
+  height: 641px;
+  padding-top: 72px;
   text-align: center;
   h1 {
-    // TODO: Logo
-    display: none;
+    @include background(image-url("logo_td.png") 47% 100px no-repeat, image-url("bg_slime.png") 192px center no-repeat);
+    text-indent: -99999px;
+    width: 100%;
+    height: 426px;
+    margin: auto;
   }
   h2 {
     @include text-shadow(white, 2px, 2px);
     font: normal 52px "KomikaTitle-Paint";
     color: #fe6537;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     line-height: 80px;
+    padding-top: 25px;
+    white-space: nowrap;
   }
 }
 
@@ -136,9 +141,18 @@ header {
   //}
 //}
 
+.lt-ie9 header {
+  h1 {
+    @include background(image-url("logo_td2.png") 210px 50% no-repeat);
+  }
+}
+
 .lt-ie7 header {
   // Background - IE 6 : No transparent PNG, use plain color
-  background: none;
+  @include background(image-url("bg_header2.png") center -200px no-repeat);
+  h1 {
+    @include background(image-url("logo_td3.png") 210px 50% no-repeat);
+  }
 }
 
 // ------------------------------------------------------------
@@ -157,7 +171,10 @@ header {
     bottom: 0;
   }
   h1 {
+    padding: 32px 0 0 5px;
     &:after {
+      top: 50px;
+      right: 4px;
       width: 660px;
     }
   }
@@ -199,7 +216,9 @@ header {
     bottom: 0;
   }
   h1 {
+    padding: 52px 0 0 1px;
     &:after {
+      top: 70px;
       width: 760px;
     }
   }
@@ -235,8 +254,10 @@ header {
     height: 6px;
   }
   h1 {
+    padding: 55px 0 0 6px;
     &:after {
       background-position: 20px center;
+      top: 72px;
       width: 520px;
     }
   }
