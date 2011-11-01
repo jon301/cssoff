@@ -13,12 +13,12 @@
   <script src="http://www.modernizr.com/downloads/modernizr-2.0.6.js"></script>
   <title>Triple Dare - The Web's Messieste Challenge!</title>
 </head>
-<body class="showgrid">
+<body>
   <nav>
     <ul>
-      <li><a href="#">Obstacles</a></li>
-      <li><a href="#">Prizes</a></li>
-      <li><a href="#">Be a contestant</a></li>
+      <li><a href="#obstacles">Obstacles</a></li>
+      <li><a href="#prizes">Prizes</a></li>
+      <li><a href="#enter">Be a contestant</a></li>
       <li><a href="#">Back to top</a></li>
     </ul>
   </nav>
@@ -34,16 +34,40 @@
   <section id="obstacles">
     <div class="container">
       <h1>Obstacles</h1>
-      <aside>
-        <ul>
-            <li>The Tank</li>
-            <li class="last">Sundae Slide</li>
-            <li>Human Hamster Wheel</li>
-            <li class="last">Down The Hatch</li>
-            <li>Pick It!</li>
-            <li class="last">The Wringer</li>
-        </ul>
-      </aside>
+      <ul>
+          <li data-obs-id="obs1" class="selected"><span class="obs obs1"></span>The Tank</li>
+          <li data-obs-id="obs2" class="last"><span class="obs obs2"></span>Sundae Slide</li>
+          <li data-obs-id="obs3"><span class="obs obs3"></span>Human Hamster Wheel</li>
+          <li data-obs-id="obs4" class="last"><span class="obs obs4"></span>Down The Hatch</li>
+          <li data-obs-id="obs5"><span class="obs obs5"></span>Pick It!</li>
+          <li data-obs-id="obs6" class="last"><span class="obs obs6"></span>The Wringer</li>
+      </ul>
+      <div id="obs_slides">
+        <div class="slide obs1 selected">
+          <h2>The Tank</h2>
+          <img src="static/images/obs_the_tank.png" alt="the_tank" />
+        </div>
+        <div class="slide obs2">
+          <h2>Sundae Slide</h2>
+          <img src="static/images/obs_sundae_slide.png" alt="sundae_slide" />
+        </div>
+        <div class="slide obs3">
+          <h2>Human Hamster Wheel</h2>
+          <img src="static/images/obs_human_hamster_wheel.png" alt="human_hamster_wheel" />
+        </div>
+        <div class="slide obs4">
+          <h2>Down The Hatch</h2>
+          <img src="static/images/obs_down_the_hatch.png" alt="down_the_hatch" />
+        </div>
+        <div class="slide obs5">
+          <h2>Pick It!</h2>
+          <img src="static/images/obs_pick_it.png" alt="pick_it" />
+        </div>
+        <div class="slide obs6">
+          <h2>The Wringer</h2>
+          <img src="static/images/obs_the_wringer.png" alt="the_wringer" />
+        </div>
+      </div>
     </div>
   </section>
   <section id="prizes">

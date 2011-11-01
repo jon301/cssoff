@@ -81,10 +81,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .texture.blue, body {
   background: url('../images/texture_blue.png?1319217734') repeat;
 }
-.texture.green, #prizes {
+.texture.green, #obstacles ul li, #prizes {
   background: url('../images/texture_green.png?1319217879') repeat;
 }
-.texture.yellow {
+.texture.yellow, #obstacles ul li.selected {
   background: url('../images/texture_yellow.png?1319217801') repeat;
 }
 .texture.orange, #obstacles {
@@ -112,6 +112,8 @@ body.showgrid .container {
 .container {
   width: 940px;
   margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
 }
 
 #obstacles, #prizes, #enter {
@@ -220,7 +222,7 @@ header h2 {
 }
 
 .lt-ie7 header {
-  background: url('../images/compat/lt_ie7/bg_header.png') center -200px no-repeat;
+  background: url('../images/compat/lt_ie7/bg_header.png?1319557094') center -200px no-repeat;
 }
 .lt-ie7 header h1 {
   background: url('../images/compat/lt_ie7/logo_td.png?1319557475') 210px 50% no-repeat;
@@ -235,14 +237,14 @@ header h2 {
   bottom: 0;
 }
 #obstacles h1 {
-  padding: 32px 0 0 5px;
+  padding: 32px 0 50px 5px;
 }
 #obstacles h1:after {
   top: 50px;
   right: 4px;
   width: 660px;
 }
-#obstacles aside {
+#obstacles ul {
   display: inline;
   float: left;
   margin-right: 20px;
@@ -250,24 +252,85 @@ header h2 {
   color: white;
   text-align: center;
   font: normal 14px "KomikaTitle-Paint";
-  line-height: 222px;
 }
-* html #obstacles aside {
+* html #obstacles ul {
   overflow-x: hidden;
 }
-#obstacles aside li {
+#obstacles ul li {
   display: inline;
   float: left;
   margin-right: 20px;
   width: 220px;
-  height: 222px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #80b238;
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
   margin-bottom: 18px;
 }
-* html #obstacles aside li {
+* html #obstacles ul li {
   overflow-x: hidden;
 }
-#obstacles aside li.last {
+#obstacles ul li.selected {
+  background-color: #eef13f;
+  color: #f46034;
+}
+#obstacles ul li.last {
   margin-right: 0;
+}
+#obstacles ul li .obs {
+  background: url('../images/obstacles.png?1320145752') no-repeat;
+  display: block;
+  margin: 0 auto 8px;
+  width: 171px;
+  height: 168px;
+}
+#obstacles ul li .obs1 {
+  background-position: left 0px;
+}
+#obstacles ul li .obs2 {
+  background-position: left -168px;
+}
+#obstacles ul li .obs3 {
+  background-position: left -336px;
+}
+#obstacles ul li .obs4 {
+  background-position: left -504px;
+}
+#obstacles ul li .obs5 {
+  background-position: left -672px;
+}
+#obstacles ul li .obs6 {
+  background-position: left -840px;
+}
+
+#obs_slides {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 460px;
+  background: url('../images/bg_slime.png?1319543662') center 5px no-repeat;
+  background-size: 236px 206px;
+  height: 700px;
+}
+* html #obs_slides {
+  overflow-x: hidden;
+}
+#obs_slides .slide {
+  display: none;
+}
+#obs_slides .slide.selected {
+  display: block;
+}
+#obs_slides .slide img {
+  width: 100%;
 }
 
 .lt-ie9 #obstacles:before {
@@ -336,6 +399,9 @@ footer {
   font: normal 14px "OpenSans-Semibold";
   height: 413px;
   line-height: 18px;
+}
+footer .container {
+  overflow: visible;
 }
 footer h1 {
   font-size: 20px;

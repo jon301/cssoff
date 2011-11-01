@@ -31,8 +31,7 @@ body.showgrid .container {
 // CONTAINER
 // ---------------
 .container {
-  width: $blueprint-container-size;
-  margin: 0 auto;
+  @include container;
 }
 
 // ---------------
@@ -171,26 +170,78 @@ header {
     bottom: 0;
   }
   h1 {
-    padding: 32px 0 0 5px;
+    padding: 32px 0 50px 5px;
     &:after {
       top: 50px;
       right: 4px;
       width: 660px;
     }
   }
-  aside {
+  ul {
     @include column(6);
     color: white;
     text-align: center;
     font: normal 14px "KomikaTitle-Paint";
-    line-height: 222px;
     li {
       @include column(3);
-      height: 222px;
+      @include border-radius(6px);
+      @extend .texture.green;
+      background-color: #80b238;
+      cursor: pointer;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      padding: 10px;
       margin-bottom: 18px;
+      &.selected {
+        @extend .texture.yellow;
+        background-color: #eef13f;
+        color: #f46034;
+      }
       &.last {
         @include last();
       }
+      .obs {
+        @include background(image-url("obstacles.png") no-repeat);
+        display: block;
+        margin: 0 auto 8px;
+        width: 171px;
+        height: 168px;
+      }
+      .obs1 {
+        background-position: left 0px;
+      }
+      .obs2 {
+        background-position: left -168px;
+      }
+      .obs3 {
+        background-position: left -336px;
+      }
+      .obs4 {
+        background-position: left -504px;
+      }
+      .obs5 {
+        background-position: left -672px;
+      }
+      .obs6 {
+        background-position: left -840px;
+      }
+    }
+  }
+}
+
+#obs_slides {
+  @include column(6, true);
+  @include background(image-url("bg_slime.png") center 5px no-repeat);
+  background-size: 236px 206px;
+  height: 700px;
+  .slide {
+    display: none;
+    &.selected {
+      display: block;
+    }
+    img {
+      width: 100%;
     }
   }
 }
@@ -295,6 +346,9 @@ footer {
   font: normal 14px "OpenSans-Semibold";
   height: 413px;
   line-height: 18px;
+  .container {
+    overflow: visible;
+  }
   h1 {
     font-size: 20px;
     line-height: 24px;
