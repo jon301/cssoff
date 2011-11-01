@@ -79,16 +79,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 .texture.blue, body {
-  background: url('../images/textures/blue.png?1319217734') repeat;
+  background: url('../images/texture_blue.png?1319217734') repeat;
 }
 .texture.green, #prizes {
-  background: url('../images/textures/green.png?1319217879') repeat;
+  background: url('../images/texture_green.png?1319217879') repeat;
 }
 .texture.yellow {
-  background: url('../images/textures/yellow.png?1319217801') repeat;
+  background: url('../images/texture_yellow.png?1319217801') repeat;
 }
 .texture.orange, #obstacles {
-  background: url('../images/textures/orange.png?1319217843') repeat;
+  background: url('../images/texture_orange.png?1319217843') repeat;
 }
 
 body {
@@ -114,17 +114,17 @@ body.showgrid .container {
   margin: 0 auto;
 }
 
-section {
+#obstacles, #prizes, #enter {
   position: relative;
 }
-section h1 {
+#obstacles h1, #prizes h1, #enter h1 {
   text-shadow: rgba(0, 0, 0, 0.2) 3px 3px 0;
   color: white;
   font: normal 40px "KomikaTitle-Paint";
   letter-spacing: 1.3px;
   position: relative;
 }
-section h1:after {
+#obstacles h1:after, #prizes h1:after, #enter h1:after {
   background-image: url('../images/bg_checks.png?1319399786');
   height: 40px;
   content: "";
@@ -132,7 +132,7 @@ section h1:after {
   right: 0;
 }
 
-.separator, #obstacles:before, #obstacles:after, #prizes:before, #prizes:after, #enter:before {
+.separator, #obstacles:before, #obstacles:after, #prizes:before, #prizes:after, #enter:before, #credits:before, #credits:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6);
   opacity: 0.06;
   height: 7px;
@@ -216,14 +216,14 @@ header h2 {
 }
 
 .lt-ie9 header h1 {
-  background: url('../images/logo_td2.png?1319556367') 210px 50% no-repeat;
+  background: url('../images/compat/lt_ie9/logo_td.png?1319556367') 210px 50% no-repeat;
 }
 
 .lt-ie7 header {
-  background: url('../images/bg_header2.png?1319557094') center -200px no-repeat;
+  background: url('../images/compat/lt_ie7/bg_header.png') center -200px no-repeat;
 }
 .lt-ie7 header h1 {
-  background: url('../images/logo_td3.png?1319557475') 210px 50% no-repeat;
+  background: url('../images/compat/lt_ie7/logo_td.png?1319557475') 210px 50% no-repeat;
 }
 
 #obstacles {
@@ -242,12 +242,39 @@ header h2 {
   right: 4px;
   width: 660px;
 }
+#obstacles aside {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+  width: 460px;
+  color: white;
+  text-align: center;
+  font: normal 14px "KomikaTitle-Paint";
+  line-height: 222px;
+}
+* html #obstacles aside {
+  overflow-x: hidden;
+}
+#obstacles aside li {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+  width: 220px;
+  height: 222px;
+  margin-bottom: 18px;
+}
+* html #obstacles aside li {
+  overflow-x: hidden;
+}
+#obstacles aside li.last {
+  margin-right: 0;
+}
 
 .lt-ie9 #obstacles:before {
-  background: url('../images/bg_separator1.png?1319368282') left top repeat;
+  background: url('../images/compat/lt_ie9/section_separator1.png?1319368282') left top repeat;
 }
 .lt-ie9 #obstacles:after {
-  background: url('../images/bg_separator1.png?1319368282') left top repeat;
+  background: url('../images/compat/lt_ie9/section_separator1.png?1319368282') left top repeat;
 }
 
 .lt-ie7 #obstacles {
@@ -273,10 +300,10 @@ header h2 {
 }
 
 .lt-ie9 #prizes:before {
-  background: url('../images/bg_separator1.png?1319368282') repeat;
+  background: url('../images/compat/lt_ie9/section_separator1.png?1319368282') repeat;
 }
 .lt-ie9 #prizes:after {
-  background: url('../images/bg_separator2.png?1319368467') repeat;
+  background: url('../images/compat/lt_ie9/section_separator2.png?1319368467') repeat;
 }
 
 .lt-ie7 #prizes {
@@ -301,9 +328,97 @@ header h2 {
 }
 
 .lt-ie9 #enter:before {
-  background: url('../images/bg_separator2.png?1319368467') repeat;
+  background: url('../images/compat/lt_ie9/section_separator2.png?1319368467') repeat;
 }
 
 footer {
+  color: white;
+  font: normal 14px "OpenSans-Semibold";
   height: 413px;
+  line-height: 18px;
+}
+footer h1 {
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+footer .left {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+  width: 460px;
+  text-align: right;
+}
+* html footer .left {
+  overflow-x: hidden;
+}
+footer .right {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 460px;
+  text-align: left;
+}
+* html footer .right {
+  overflow-x: hidden;
+}
+
+#credits {
+  position: relative;
+}
+#credits:after {
+  bottom: 0;
+}
+#credits div {
+  width: 940px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.lt-ie9 #credits:before {
+  background: url('../images/compat/lt_ie9/footer_separator.png?1319368521') left top repeat;
+}
+.lt-ie9 #credits:after {
+  background: url('../images/compat/lt_ie9/footer_separator.png?1319368521') left top repeat;
+}
+
+#credits_kn {
+  padding: 67px 0 28px;
+}
+#credits_kn:before {
+  background: url('../images/logo_kn.png?1320140276') center top no-repeat;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 85px;
+  position: absolute;
+  top: -36px;
+}
+#credits_kn h1 {
+  padding-bottom: 10px;
+}
+
+#credits_studios {
+  padding-bottom: 63px;
+}
+#credits_studios h1 {
+  padding-bottom: 5px;
+}
+
+#cc_license {
+  text-align: center;
+  padding-top: 21px;
+}
+
+#cc_logo {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  padding-top: 21px;
+}
+#cc_logo {
+  *display: inline;
 }

@@ -38,7 +38,7 @@ body.showgrid .container {
 // ---------------
 // SECTIONS
 // ---------------
-section {
+#obstacles, #prizes, #enter {
   position: relative; // Pseudo elements separators are absolutely positioned
   h1 {
     // TODO: IE 6,7,8 : No rgba, use plain color
@@ -143,15 +143,15 @@ header {
 
 .lt-ie9 header {
   h1 {
-    @include background(image-url("logo_td2.png") 210px 50% no-repeat);
+    @include background(image-url("compat/lt_ie9/logo_td.png") 210px 50% no-repeat);
   }
 }
 
 .lt-ie7 header {
   // Background - IE 6 : No transparent PNG, use plain color
-  @include background(image-url("bg_header2.png") center -200px no-repeat);
+  @include background(image-url("compat/lt_ie7/bg_header.png") center -200px no-repeat);
   h1 {
-    @include background(image-url("logo_td3.png") 210px 50% no-repeat);
+    @include background(image-url("compat/lt_ie7/logo_td.png") 210px 50% no-repeat);
   }
 }
 
@@ -178,16 +178,31 @@ header {
       width: 660px;
     }
   }
+  aside {
+    @include column(6);
+    color: white;
+    text-align: center;
+    font: normal 14px "KomikaTitle-Paint";
+    line-height: 222px;
+    li {
+      @include column(3);
+      height: 222px;
+      margin-bottom: 18px;
+      &.last {
+        @include last();
+      }
+    }
+  }
 }
 
 .lt-ie9 {
   #obstacles {
     // Separators - IE 8 : Opacity not supported, use transparent PNG
     &:before {
-      @include background(image-url("bg_separator1.png") left top repeat);
+      @include background(image-url("compat/lt_ie9/section_separator1.png") left top repeat);
     }
     &:after {
-      @include background(image-url("bg_separator1.png") left top repeat);
+      @include background(image-url("compat/lt_ie9/section_separator1.png") left top repeat);
     }
   }
 }
@@ -228,10 +243,10 @@ header {
   #prizes {
     // Separators - IE 8 : Opacity not supported, use transparent PNG
     &:before {
-      @include background(image-url("bg_separator1.png") repeat);
+      @include background(image-url("compat/lt_ie9/section_separator1.png") repeat);
     }
     &:after {
-      @include background(image-url("bg_separator2.png") repeat);
+      @include background(image-url("compat/lt_ie9/section_separator2.png") repeat);
     }
   }
 }
@@ -267,7 +282,7 @@ header {
   #enter {
     // Separators - IE 8 : Opacity not supported, use transparent PNG
     &:before {
-      @include background(image-url("bg_separator2.png") repeat);
+      @include background(image-url("compat/lt_ie9/section_separator2.png") repeat);
     }
   }
 }
@@ -276,6 +291,77 @@ header {
 // FOOTER
 // ------------------------------------------------------------
 footer {
+  color: white;
+  font: normal 14px "OpenSans-Semibold";
   height: 413px;
+  line-height: 18px;
+  h1 {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .left {
+    @include column(6);
+    text-align: right;
+  }
+  .right {
+    @include column(6, true);
+    text-align: left;
+  }
+}
+#credits {
+  position: relative;
+  &:before {
+    @extend .separator;
+  }
+  &:after {
+    @extend .separator;
+    bottom: 0;
+  }
+  div {
+    @include container;
+  }
 }
 
+.lt-ie9 {
+  #credits {
+    // Separators - IE 8 : Opacity not supported, use transparent PNG
+    &:before {
+      @include background(image-url("compat/lt_ie9/footer_separator.png") left top repeat);
+    }
+    &:after {
+      @include background(image-url("compat/lt_ie9/footer_separator.png") left top repeat);
+    }
+  }
+}
+#credits_kn {
+  padding: 67px 0 28px;
+  &:before {
+    @include background(image-url("logo_kn.png") center top no-repeat);
+    content: "";
+    display: block;
+    width: 100%;
+    height: 85px;
+    position: absolute;
+    top: -36px;
+  }
+  h1 {
+    padding-bottom: 10px;
+  }
+}
+#credits_studios {
+  padding-bottom: 63px;
+  h1 {
+    padding-bottom: 5px;
+  }
+}
+
+#cc_license {
+  text-align: center;
+  padding-top: 21px;
+}
+
+#cc_logo {
+  @include inline-block();
+  padding-top: 21px;
+}
