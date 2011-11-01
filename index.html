@@ -10,11 +10,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="static/css/index.css" type="text/css">
-  <script src="http://www.modernizr.com/downloads/modernizr-2.0.6.js"></script>
-  <script src="static/js/jquery-1.6.4.min.js"></script>
+  <script src="static/js/modernizr.js"></script>
   <title>Triple Dare - The Web's Messieste Challenge!</title>
 </head>
-<body class="showgrid">
+<body>
   <nav>
     <ul>
       <li><a href="#obstacles">Obstacles</a></li>
@@ -75,11 +74,62 @@
   <section id="prizes">
     <div class="container">
       <h1>Prizes</h1>
+      <div class="left">
+        <div class="prize prize1">
+          <img src="static/images/prize_space_camp.png" alt="space_camp" />
+          <p>A Trip to Space Camp!</p>
+        </div>
+        <div class="prize prize2">
+          <img src="static/images/prize_keyboard.png" alt="keyboard" />
+          <p>A Casio Rapman Keyboard!</p>
+        </div>
+      </div>
+      <div class="right">
+        <div class="prize prize3">
+          <img src="static/images/prize_skateboard.png" alt="keyboard" />
+          <p>A Nash Skateboard!</p>
+        </div>
+        <div class="prize prize4">
+          <img src="static/images/prize_tv.png" alt="tv_vcr" />
+          <p>A 13 inch TV/VCR Combo!</p>
+        </div>
+      </div>
     </div>
   </section>
   <section id="enter">
     <div class="container">
       <h1>Be a contestant</h1>
+      <div class="left">
+        <form>
+          <p><label for="name">Name:</label> <input type="text" placeholder="Your name" id="name"></p>
+          <p><label for="email">Email:</label> <input type="email" placeholder="Email address" id="email"></p>
+          <p><label for="team_name">Team name:</label> <input type="text" placeholder="Team name" id="team_name"></p>
+          <p>
+            <label for="team_color">Team color:</label>
+            <select id="team_color">
+                <option value="">Team color</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="orange">Orange</option>
+            </select>
+
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+          </p>
+          <p><label for="profile_url">Profile URL:</label> <input type="url" placeholder="Profile photo URL" id="profile_url"></p>
+          <p><input type="submit" id="enter_submit" value="Submit entry!"></p>
+        </form>
+      </div>
+      <div class="right">
+        <img src="static/images/enter_clock.png" alt="clock" />
+        <p>The clock<br />is ticking!</p>
+      </div>
     </div>
   </section>
   <footer>
@@ -102,6 +152,8 @@
       </section>
     </div>
   </footer>
+  <script src="static/js/jquery-1.6.4.min.js"></script>
+  <script src="static/js/jquery.placeholder.min.js"></script>
   <script src="static/js/index.js"></script>
 </body>
 </html>

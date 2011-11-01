@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    // Placeholder
+    $('input[placeholder], textarea[placeholder]').placeholder();
+
     // Obstacles
     var obs_items = $('#obstacles li');
     var obs_slides = $('#obs_slides .slide');
