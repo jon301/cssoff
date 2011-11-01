@@ -11,9 +11,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="static/css/index.css" type="text/css">
   <script src="http://www.modernizr.com/downloads/modernizr-2.0.6.js"></script>
+  <script src="static/js/jquery-1.6.4.min.js"></script>
   <title>Triple Dare - The Web's Messieste Challenge!</title>
 </head>
-<body>
+<body class="showgrid">
   <nav>
     <ul>
       <li><a href="#obstacles">Obstacles</a></li>
@@ -43,29 +44,30 @@
           <li data-obs-id="obs6" class="last"><span class="obs obs6"></span>The Wringer</li>
       </ul>
       <div id="obs_slides">
-        <div class="slide obs1 selected">
+        <div class="slide selected" data-obs-id="obs1">
           <h2>The Tank</h2>
-          <img src="static/images/obs_the_tank.png" alt="the_tank" />
+          <div><img src="static/images/obs_the_tank.png" alt="the_tank" /></div>
         </div>
-        <div class="slide obs2">
+        <div class="slide" data-obs-id="obs2">
           <h2>Sundae Slide</h2>
-          <img src="static/images/obs_sundae_slide.png" alt="sundae_slide" />
+          <div><img src="static/images/obs_sundae_slide.png" alt="sundae_slide" /></div>
         </div>
-        <div class="slide obs3">
+        <div class="slide" data-obs-id="obs3">
           <h2>Human Hamster Wheel</h2>
-          <img src="static/images/obs_human_hamster_wheel.png" alt="human_hamster_wheel" />
+          <div><img src="static/images/obs_human_hamster_wheel.png" alt="human_hamster_wheel" /></div>
         </div>
-        <div class="slide obs4">
+        <div class="slide" data-obs-id="obs4">
           <h2>Down The Hatch</h2>
-          <img src="static/images/obs_down_the_hatch.png" alt="down_the_hatch" />
+          <small>6ft Slide Covered In gunk!</small>
+          <div><img src="static/images/obs_down_the_hatch.png" alt="down_the_hatch" /></div>
         </div>
-        <div class="slide obs5">
+        <div class="slide" data-obs-id="obs5">
           <h2>Pick It!</h2>
-          <img src="static/images/obs_pick_it.png" alt="pick_it" />
+          <div><img src="static/images/obs_pick_it.png" alt="pick_it" /></div>
         </div>
-        <div class="slide obs6">
+        <div class="slide" data-obs-id="obs6">
           <h2>The Wringer</h2>
-          <img src="static/images/obs_the_wringer.png" alt="the_wringer" />
+          <div><img src="static/images/obs_the_wringer.png" alt="the_wringer" /></div>
         </div>
       </div>
     </div>
@@ -100,5 +102,6 @@
       </section>
     </div>
   </footer>
+  <script src="static/js/index.js"></script>
 </body>
 </html>
