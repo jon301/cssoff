@@ -10,16 +10,27 @@
 // ---------------
 // BODY
 // ---------------
+html, body {
+  @include min-width($blueprint-container-size);
+}
 body {
   @extend .texture.blue;
   background-color: #80c1d6;
 }
 
 .lt-ie7 {
+  html, body {
+    @include min-width(auto);
+  }
   body {
     // Background - IE 6 : No transparent PNG, use plain color
     background: #80c1d6;
   }
+}
+
+// GRID
+body.showgrid .container {
+  @include showgrid;
 }
 
 // ---------------
@@ -561,3 +572,155 @@ footer {
   @include inline-block();
   padding-top: 21px;
 }
+
+// ------------------------------------------------------------
+// RESPONSIVENESS
+// ------------------------------------------------------------
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  $blueprint-container-size: 620px;
+  html, body {
+    @include min-width($blueprint-container-size);
+  }
+  .container {
+    @include container;
+  }
+  #credits {
+    div {
+      @include container;
+    }
+  }
+  nav {
+    font-size: 14px;
+    ul li {
+      @include inline-block-list-item(4px);
+    }
+  }
+  header {
+    font-size: 17px;
+    h1 {
+      @include background(image-url("logo_td.png") center 100px no-repeat, image-url("header_green_slime.png") center center no-repeat);
+    }
+    h2 {
+     font-size: 30px;
+    }
+  }
+  #obstacles {
+    h1:after {
+      width: 340px;
+    }
+    ul {
+      @include last();
+      @include prepend(2);
+    }
+    #obs_slides {
+      display: none;
+    }
+  }
+  #prizes {
+    height: 1765px;
+    h1:after {
+      width: 440px;
+    }
+    .prize2 {
+      padding-bottom: 60px;
+    }
+    .left, .right {
+      @include last();
+      @include prepend(2);
+    }
+  }
+  #enter {
+    h1:after {
+      width: 200px;
+    };
+    .left {
+      @include column(6, true);
+      @include prepend(2);
+    }
+    .right {
+      display: none;
+    }
+    #gender {
+      @include column(3, true);
+    }
+  }
+  footer {
+    .left {
+      @include column(4);
+    }
+    .right {
+      @include column(4, true);
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  $blueprint-container-size: 460px;
+  html, body {
+    @include min-width($blueprint-container-size);
+  }
+  .container {
+    @include container;
+  }
+  #credits {
+    div {
+      @include container;
+    }
+  }
+  nav {
+    font-size: 12px;
+    ul li {
+      @include inline-block-list-item(2px);
+    }
+  }
+  header {
+    font-size: 15px;
+    h1 {
+      @include background(image-url("logo_td.png") center 100px no-repeat, image-url("header_green_slime.png") center center no-repeat);
+    }
+    h2 {
+     font-size: 25px;
+    }
+  }
+  #obstacles {
+    h1:after {
+      width: 180px;
+    }
+    #obs_slides {
+      display: none;
+    }
+  }
+  #prizes {
+    height: 1765px;
+    h1:after {
+      width: 280px;
+    }
+    .prize2 {
+      padding-bottom: 60px;
+    }
+  }
+  #enter {
+    h1:after {
+      width: 40px;
+    };
+    .left {
+      @include column(6, true);
+    }
+    .right {
+      display: none;
+    }
+    #gender {
+      @include column(3, true);
+    }
+  }
+  footer {
+    .left {
+      @include column(3);
+    }
+    .right {
+      @include column(3, true);
+    }
+  }
+}
+
