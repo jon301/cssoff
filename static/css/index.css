@@ -1,3 +1,6 @@
+/* ------------------------------------------------------------
+ * RESET
+ * ------------------------------------------------------------ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,6 +57,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* ------------------------------------------------------------
+ * GENERAL
+ * ------------------------------------------------------------ */
 @font-face {
   font-family: "OpenSans-Semibold";
   src: url('../fonts/open-sans/OpenSans-Semibold.eot');
@@ -91,6 +97,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: url('../images/texture_orange.png') repeat;
 }
 
+/* ------------------------------------------------------------
+ * BODY
+ * ------------------------------------------------------------ */
 html, body {
   min-width: 940px;
   width: auto !important;
@@ -110,6 +119,13 @@ body {
   background: #80c1d6;
 }
 
+.container {
+  width: 940px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+
 body.showgrid .container {
   background-image: -webkit-gradient(linear, 0% 50%, 960 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(6.25%, rgba(100, 100, 225, 0.25)), color-stop(6.25%, rgba(0, 0, 0, 0)), color-stop(8.333%, rgba(0, 0, 0, 0)), color-stop(8.333%, rgba(100, 100, 225, 0.25)), color-stop(14.583%, rgba(100, 100, 225, 0.25)), color-stop(14.583%, rgba(0, 0, 0, 0)), color-stop(16.667%, rgba(0, 0, 0, 0)), color-stop(16.667%, rgba(100, 100, 225, 0.25)), color-stop(22.917%, rgba(100, 100, 225, 0.25)), color-stop(22.917%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(100, 100, 225, 0.25)), color-stop(31.25%, rgba(100, 100, 225, 0.25)), color-stop(31.25%, rgba(0, 0, 0, 0)), color-stop(33.333%, rgba(0, 0, 0, 0)), color-stop(33.333%, rgba(100, 100, 225, 0.25)), color-stop(39.583%, rgba(100, 100, 225, 0.25)), color-stop(39.583%, rgba(0, 0, 0, 0)), color-stop(41.667%, rgba(0, 0, 0, 0)), color-stop(41.667%, rgba(100, 100, 225, 0.25)), color-stop(47.917%, rgba(100, 100, 225, 0.25)), color-stop(47.917%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(100, 100, 225, 0.25)), color-stop(56.25%, rgba(100, 100, 225, 0.25)), color-stop(56.25%, rgba(0, 0, 0, 0)), color-stop(58.333%, rgba(0, 0, 0, 0)), color-stop(58.333%, rgba(100, 100, 225, 0.25)), color-stop(64.583%, rgba(100, 100, 225, 0.25)), color-stop(64.583%, rgba(0, 0, 0, 0)), color-stop(66.667%, rgba(0, 0, 0, 0)), color-stop(66.667%, rgba(100, 100, 225, 0.25)), color-stop(72.917%, rgba(100, 100, 225, 0.25)), color-stop(72.917%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(100, 100, 225, 0.25)), color-stop(81.25%, rgba(100, 100, 225, 0.25)), color-stop(81.25%, rgba(0, 0, 0, 0)), color-stop(83.333%, rgba(0, 0, 0, 0)), color-stop(83.333%, rgba(100, 100, 225, 0.25)), color-stop(89.583%, rgba(100, 100, 225, 0.25)), color-stop(89.583%, rgba(0, 0, 0, 0)), color-stop(91.667%, rgba(0, 0, 0, 0)), color-stop(91.667%, rgba(100, 100, 225, 0.25)), color-stop(97.917%, rgba(100, 100, 225, 0.25)), color-stop(97.917%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(100, 100, 225, 0.25) 0px, rgba(100, 100, 225, 0.25) 60px, rgba(0, 0, 0, 0) 60px, rgba(0, 0, 0, 0) 80px, rgba(100, 100, 225, 0.25) 80px, rgba(100, 100, 225, 0.25) 140px, rgba(0, 0, 0, 0) 140px, rgba(0, 0, 0, 0) 160px, rgba(100, 100, 225, 0.25) 160px, rgba(100, 100, 225, 0.25) 220px, rgba(0, 0, 0, 0) 220px, rgba(0, 0, 0, 0) 240px, rgba(100, 100, 225, 0.25) 240px, rgba(100, 100, 225, 0.25) 300px, rgba(0, 0, 0, 0) 300px, rgba(0, 0, 0, 0) 320px, rgba(100, 100, 225, 0.25) 320px, rgba(100, 100, 225, 0.25) 380px, rgba(0, 0, 0, 0) 380px, rgba(0, 0, 0, 0) 400px, rgba(100, 100, 225, 0.25) 400px, rgba(100, 100, 225, 0.25) 460px, rgba(0, 0, 0, 0) 460px, rgba(0, 0, 0, 0) 480px, rgba(100, 100, 225, 0.25) 480px, rgba(100, 100, 225, 0.25) 540px, rgba(0, 0, 0, 0) 540px, rgba(0, 0, 0, 0) 560px, rgba(100, 100, 225, 0.25) 560px, rgba(100, 100, 225, 0.25) 620px, rgba(0, 0, 0, 0) 620px, rgba(0, 0, 0, 0) 640px, rgba(100, 100, 225, 0.25) 640px, rgba(100, 100, 225, 0.25) 700px, rgba(0, 0, 0, 0) 700px, rgba(0, 0, 0, 0) 720px, rgba(100, 100, 225, 0.25) 720px, rgba(100, 100, 225, 0.25) 780px, rgba(0, 0, 0, 0) 780px, rgba(0, 0, 0, 0) 800px, rgba(100, 100, 225, 0.25) 800px, rgba(100, 100, 225, 0.25) 860px, rgba(0, 0, 0, 0) 860px, rgba(0, 0, 0, 0) 880px, rgba(100, 100, 225, 0.25) 880px, rgba(100, 100, 225, 0.25) 940px, rgba(0, 0, 0, 0) 940px, rgba(0, 0, 0, 0) 960px);
@@ -120,13 +136,9 @@ body.showgrid .container {
   background-position: left top;
 }
 
-.container {
-  width: 940px;
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
-}
-
+/* ------------------------------------------------------------
+ * SECTIONS
+ * ------------------------------------------------------------ */
 #obstacles, #prizes, #enter {
   position: relative;
 }
@@ -145,6 +157,7 @@ body.showgrid .container {
   right: 0;
 }
 
+/* SEPARATORS */
 .separator, #obstacles:before, #obstacles:after, #prizes:before, #prizes:after, #enter:before, #credits:before, #credits:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6);
   opacity: 0.06;
@@ -156,6 +169,9 @@ body.showgrid .container {
   position: absolute;
 }
 
+/* ------------------------------------------------------------
+ * NAV
+ * ------------------------------------------------------------ */
 nav {
   background: rgba(15, 40, 48, 0.05);
   font: normal 18px "OpenSans-Semibold";
@@ -225,6 +241,9 @@ nav ul li a:hover {
   background: #7ab9ce;
 }
 
+/* ------------------------------------------------------------
+ * HEADER
+ * ------------------------------------------------------------ */
 header {
   background: url('../images/header_blue_slime.png') center -200px no-repeat;
   color: white;
@@ -261,6 +280,9 @@ header h2 {
   background: url('../images/compat/lt_ie7/logo_td.png') 210px 50% no-repeat;
 }
 
+/* ------------------------------------------------------------
+ * OBSTACLES
+ * ------------------------------------------------------------ */
 #obstacles {
   background-color: #fe6638;
   height: 939px;
@@ -421,6 +443,9 @@ header h2 {
   background: url('../images/compat/lt_ie7/obstacles_green_slime.png') center 5px no-repeat;
 }
 
+/* ------------------------------------------------------------
+ * PRIZES
+ * ------------------------------------------------------------ */
 #prizes {
   background-color: #80b238;
   height: 1045px;
@@ -487,6 +512,9 @@ header h2 {
   background: #80b238;
 }
 
+/* ------------------------------------------------------------
+ * ENTER
+ * ------------------------------------------------------------ */
 #enter {
   height: 844px;
 }
@@ -616,6 +644,9 @@ header h2 {
   background: url('../images/compat/lt_ie7/enter_green_slime.png') top center no-repeat;
 }
 
+/* ------------------------------------------------------------
+ * FOOTER
+ * ------------------------------------------------------------ */
 footer {
   color: white;
   font: normal 14px "OpenSans-Semibold";
@@ -711,6 +742,9 @@ footer .right {
   *display: inline;
 }
 
+/* ------------------------------------------------------------
+ * RESPONSIVENESS
+ * ------------------------------------------------------------ */
 @media only screen and (min-width: 480px) and (max-width: 768px) {
   html, body {
     min-width: 620px;
